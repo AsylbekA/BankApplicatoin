@@ -1,10 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace BankLibrary.Model
 {
-    class AccountStateHandler
+    public delegate void AccountStateHandler(object sender, AccountEventArgs e);
+    class AccountEventArgs
     {
+        /// <summary>
+        /// Сообщение
+        /// </summary>
+        public string Message { get; private set; }
+        /// <summary>
+        /// Сумма, на которую изменился счет
+        /// </summary>
+        public decimal Sum { get; private set; }
+        public AccountEventArgs(string _mes,decimal _sum)
+        {
+            Message = _mes;
+            Sum = _sum;
+        }
     }
 }

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace BankLibrary.Interface
 {
     interface IAccount
@@ -15,6 +12,6 @@ namespace BankLibrary.Interface
         /// Взьят со счета
         /// </summary>
         /// <param name="sum"></param>
-        void Withdraw(decimal sum);
+        decimal Withdraw(decimal sum);
     }
 }
