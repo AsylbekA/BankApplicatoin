@@ -7,7 +7,7 @@ namespace BankLibrary.Interface
     /// Положит на деньги на счет
     /// </summary>
     /// <param name="sum"></param>
-        void Pat(decimal sum);
+        void Put(decimal sum);
         /// <summary>
         /// Взьят со счета
         /// </summary>

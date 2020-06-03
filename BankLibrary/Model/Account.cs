@@ -147,7 +147,7 @@ namespace BankLibrary.Model
         {
             decimal increment = Sum * Percentage / 100;
             Sum = Sum + increment;
-            OnCalculated(new AccountEventArgs($"Начислены проценты в размере: {increment}", increment)));
+            OnCalculated(new AccountEventArgs($"Начислены проценты в размере: {increment}", increment));
         }
     }
 }
