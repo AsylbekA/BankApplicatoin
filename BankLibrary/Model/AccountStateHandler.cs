@@ -2,7 +2,7 @@
 namespace BankLibrary.Model
 {
     public delegate void AccountStateHandler(object sender, AccountEventArgs e);
-    class AccountEventArgs
+    public class AccountEventArgs
     {
         /// <summary>
         /// Сообщение

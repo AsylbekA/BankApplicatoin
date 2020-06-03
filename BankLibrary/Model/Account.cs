@@ -35,6 +35,13 @@ namespace BankLibrary.Model
         /// </summary>
         protected int _days = 0;
 
+        public Account(decimal sum, int percentage)
+        {
+            Sum = sum;
+            Percentage = percentage;
+            Id = ++counter;
+        }
+
         /// <summary>
         /// Текущая сумма на счету
         /// </summary>
@@ -69,11 +76,11 @@ namespace BankLibrary.Model
         {
             CallEvent(e, Opened);
         }
-        private virtual void OnWithdrawed(AccountEventArgs e)
+        protected virtual void OnWithdrawed(AccountEventArgs e)
         {
             CallEvent(e, Withreved);
         }
-        private virtual void OnAdded(AccountEventArgs e)
+        protected virtual void OnAdded(AccountEventArgs e)
         {
             CallEvent(e, Added);
         }
@@ -86,7 +93,7 @@ namespace BankLibrary.Model
             CallEvent(e,Calculated);
         }
         #endregion
-        public virtual void Pat(decimal sum)
+        public virtual void Put(decimal sum)
         {
             Sum += sum;
             OnAdded(new AccountEventArgs("На счет поступило"+sum,sum));
