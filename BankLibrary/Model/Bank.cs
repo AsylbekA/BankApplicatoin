@@ -10,7 +10,7 @@ namespace BankLibrary.Model
         Ordinary,
         Deposit
     }
-    class Bank<T> where T:Account
+   public  class Bank<T> where T:Account
     {
         T[] accounts;
         public string Name { get; private set; }
@@ -58,6 +58,15 @@ namespace BankLibrary.Model
         }
         //добавление средств на счет
         public void Put(decimal sum,int id)
+        {
+            T account = FindAccount(id);
+            if (account == null)
+                throw new Exception("Счет не найден");
+            account.Put(sum);
+        }
+
+        // вывод средств
+        public void Withdraw(decimal sum,int id)
         {
             T account = FindAccount(id);
             if (account == null)
